@@ -1,0 +1,25 @@
+<script setup>
+import Header from './components/Header.vue'
+import Hero from './components/Hero.vue'
+import About from './components/About.vue'
+import Why from './components/Why.vue'
+import Awards from './components/Awards.vue'
+import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
+</script>
+
+<template>
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Why />
+    <Awards />
+    <Contact />
+  </main>
+  <Footer />
+</template>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+</style>
