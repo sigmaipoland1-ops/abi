@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  abiria:
+    image: nginx:alpine
+    container_name: abiria
+    restart: always
+    networks:
+      - root_default
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      - "traefik.enable=true"
+      # HTTP Router
+      - "traefik.http.routers.abiria-http.rule=Host(`abiria.dubiai.pl`) || Host(`www.abiria.dubiai.pl`)"
+      - "traefik.http.routers.abiria-http.entrypoints=web"
+      - "traefik.http.routers.abiria-http.middlewares=https-redirect"
+      # HTTPS Router
+      - "traefik.http.routers.abiria.rule=Host(`abiria.dubiai.pl`) || Host(`www.abiria.dubiai.pl`)"
+      - "traefik.http.routers.abiria.entrypoints=websecure"
+      - "traefik.http.routers.abiria.tls=true"
+      - "traefik.http.routers.abiria.tls.certresolver=mytlschallenge"
+      # Service
+      - "traefik.http.services.abiria.loadbalancer.server.port=80"
+      # Middleware
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+
+networks:
+  root_default:
+    external: true
