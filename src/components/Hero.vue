@@ -15,12 +15,12 @@
           Twój przyszły przyjaciel rośnie w naszym domu. Wychowujemy z miłością, hodujemy z odpowiedzialnością.
         </p>
         <div class="hero-buttons">
-          <a href="#kontakt" class="btn btn-primary">
+          <RouterLink to="/szczenieta" class="btn btn-primary">
             Zyskaj członka rodziny
-          </a>
-          <a href="#o-nas" class="btn btn-secondary">
+          </RouterLink>
+          <RouterLink to="/o-nas" class="btn btn-secondary">
             Poznaj naszą historię
-          </a>
+          </RouterLink>
         </div>
       </div>
     </div>

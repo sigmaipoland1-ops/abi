@@ -1,29 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-
-const form = ref({
-  name: '',
-  email: '',
-  message: ''
-})
-
-const status = ref(null)
-const isSubmitting = ref(false)
-
-const handleSubmit = async () => {
-  isSubmitting.value = true
-  
-  // Symulacja wysyłki formularza
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  
-  status.value = 'success'
-  form.value = { name: '', email: '', message: '' }
-  isSubmitting.value = false
-  
-  setTimeout(() => {
-    status.value = null
-  }, 5000)
-}
+import ContactForm from './ContactForm.vue'
 </script>
 
 <template>
@@ -37,59 +13,48 @@ const handleSubmit = async () => {
       </div>
       
       <div class="contact-wrapper">
-        <form class="contact-form" @submit.prevent="handleSubmit">
-          <div v-if="status === 'success'" class="form-message success">
-            Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe.
-          </div>
-          
-          <div v-if="status === 'error'" class="form-message error">
-            Wystąpił błąd podczas wysyłania wiadomości. Proszę spróbować ponownie.
-          </div>
-          
-          <div class="form-group">
-            <label for="name" class="form-label">Twoje imię</label>
-            <input 
-              type="text" 
-              id="name" 
-              v-model="form.name"
-              class="form-input" 
-              required 
-              placeholder="Jan Kowalski"
-            >
-          </div>
-          
-          <div class="form-group">
-            <label for="email" class="form-label">Adres email</label>
-            <input 
-              type="email" 
-              id="email"
-              v-model="form.email" 
-              class="form-input" 
-              required 
-              placeholder="jan@example.com"
-            >
-          </div>
-          
-          <div class="form-group">
-            <label for="message" class="form-label">Wiadomość</label>
-            <textarea 
-              id="message"
-              v-model="form.message" 
-              class="form-textarea" 
-              required 
-              placeholder="Napisz swoją wiadomość..."
-            ></textarea>
-          </div>
-          
-          <button 
-            type="submit" 
-            class="btn btn-primary form-submit"
-            :disabled="isSubmitting"
-          >
-            {{ isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość' }}
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Consolidating styles for the wrapper mostly, form styles are now in ContactForm */
+.contact {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-dark) 100%);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 60%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(196, 149, 106, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contact .section-title {
+    color: var(--color-white);
+}
+
+.contact .section-title::after {
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-warm));
+}
+
+.contact .section-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+</style>

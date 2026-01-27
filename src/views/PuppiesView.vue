@@ -1,90 +1,113 @@
+<script setup>
+import ContactForm from '../components/ContactForm.vue'
+</script>
+
 <template>
   <div class="puppies-page">
-    <div class="hero-small">
-      <div class="container">
-        <h1>Szczenięta</h1>
-      </div>
-    </div>
 
     <div class="container content-section">
       
-      <!-- Current Litter -->
-      <section id="current-litter" class="litter-section">
-        <div class="section-header">
-          <span class="tag">Obecny Miot</span>
-          <h2>Miot "New" - Urodzone 23.10.2025</h2>
-        </div>
-
-        <div class="litter-details">
-          <div class="parents-info">
-            <h3>Rodzice</h3>
-            <p><strong>Matka:</strong> ABI (XXXX FCI)</p>
-            <p><strong>Ojciec:</strong> BAZYL (Dolbia EVER SO CLEVER)</p>
-            <p class="description">
-              Młoda mama spisała się wzorowo otaczając maluchy od pierwszych chwil życia miłością.
-              Szczeniaczki będą gotowe do zmiany domu od około 20 lutego 2026 r.
-            </p>
+      <!-- Announcement Section -->
+      <section class="announcement-section">
+        <h1 class="announcement-title">ZAPOWIEDŹ MIOTU</h1>
+        <p class="announcement-subtitle">Spodziewamy się szczeniąt w Styczniu 2026!</p>
+        
+        <div class="parents-container">
+          <!-- Mother -->
+          <div class="parent-card female">
+            <div class="parent-image">
+               <img src="/images/dogs/abi/show-1.jpg" alt="Matka Abi" />
+            </div>
+            <div class="parent-info">
+              <h3>Matka</h3>
+              <h2 class="dog-name">ABI</h2>
+              <p class="kennel-name">XXXX FCI</p>
+              <ul class="achievements">
+                <li>Suka Hodowlana</li>
+                <li>Champion Polski</li>
+                <li>HDA / ED 0/0</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="puppy-list">
-            <h3>Lista Szczeniąt</h3>
-            <div class="puppy-grid">
-              <div class="puppy-card female">
-                <h4>Suczki</h4>
-                <ul>
-                  <li>New Alaska</li>
-                  <li>New Florida</li>
-                  <li>New Nevada</li>
-                  <li>New Virginia</li>
-                  <li>New Oklahoma</li>
-                  <li>New Montana</li>
-                  <li>New Nebraska</li>
-                  <li>New Alabama</li>
-                </ul>
-              </div>
-              <div class="puppy-card male">
-                <h4>Pieski</h4>
-                <ul>
-                  <li>New Kansas</li>
-                  <li>New Texas</li>
-                  <li>New Idaho</li>
-                  <li>New Kentucky</li>
-                  <li>New Oregon</li>
-                  <li>New Colorado</li>
-                  <li>New Michigan</li>
-                  <li>New Ohio</li>
-                </ul>
-              </div>
+          <!-- Divider -->
+          <div class="parents-divider">
+            <span class="x-mark">X</span>
+          </div>
+
+          <!-- Father -->
+          <div class="parent-card male">
+             <div class="parent-image">
+               <!-- Using Amaro image as placeholder for Bazyl as discussed -->
+               <img src="/images/about/amaro-owner.jpg" alt="Ojciec Bazyl" />
+            </div>
+             <div class="parent-info">
+              <h3>Ojciec</h3>
+              <h2 class="dog-name">BAZYL</h2>
+              <p class="kennel-name">Dolbia EVER SO CLEVER</p>
+              <ul class="achievements">
+                <li>Reproduktor</li>
+                <li>Champion Polski</li>
+                <li>HDA / ED 0/0</li>
+              </ul>
             </div>
           </div>
         </div>
+
+        <div class="litter-info">
+          <p>
+            Oczekujemy szczeniąt w kolorze biszkoptowym (żółtym). 
+            Rodzice są przebadani genetycznie, co gwarantuje zdrowie maluchów (wolne od PRA, EIC, HNPK).
+          </p>
+        </div>
       </section>
 
-      <hr class="divider" />
+      <!-- Integrated Contact Section -->
+      <section class="integrated-contact">
+        <div class="contact-grid">
+          <!-- Left: Contact Details -->
+          <div class="contact-details">
+            <h2>Skontaktuj się z nami</h2>
+            <p class="contact-intro">
+              Jesteśmy tu, aby odpowiedzieć na Twoje pytania, porozmawiać o rasie i pomóc Ci w wyborze idealnego członka rodziny. 
+            </p>
+            
+            <div class="contact-methods">
+              <div class="method-item">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="method-info">
+                  <span class="label">Zadzwoń do nas</span>
+                  <a href="tel:+48123456789" class="value">+48 123 456 789</a>
+                </div>
+              </div>
 
-      <!-- Planned Litter -->
-      <section id="planned-litter" class="litter-section">
-        <div class="section-header">
-           <span class="tag secondary">Plany Hodowlane</span>
-           <h2>Zapowiedź Miotu</h2>
-        </div>
-        <div class="litter-details">
-          <p>
-            Oczekujemy biszkoptowych szczeniaczków Labrador Retriever (ZKwP/FCI).
-          </p>
-          <p>
-            Planowany termin: <strong>Styczeń 2026</strong>.
-          </p>
-          <p>
-            Rodzice są wolni od dysplazji biodrowej i łokciowej (HD-A, ED-0/0) oraz przebadani genetycznie.
-            Gwarantujemy, że żaden ze szczeniaczków nie zachoruje na typowe choroby genetyczne rasy (PRCD-PRA, EIC, HNPK).
-          </p>
-          <div class="cta-box">
-             <h3>Zapraszamy do Rezerwacji</h3>
-             <p>
-               Przed decyzją prosimy o zapoznanie się z informacjami w dziale 
-               <RouterLink to="/knowledge">Warto Wiedzieć</RouterLink>.
-             </p>
+              <div class="method-item">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="method-info">
+                  <span class="label">Napisz maila</span>
+                  <a href="mailto:kontakt@abiria.pl" class="value">kontakt@abiria.pl</a>
+                </div>
+              </div>
+
+              <div class="method-item">
+                <div class="icon-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="method-info">
+                  <span class="label">Lokalizacja</span>
+                  <span class="value">Poznań, Polska</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="contact-form-wrapper">
+             <ContactForm />
           </div>
         </div>
       </section>
@@ -94,137 +117,226 @@
 </template>
 
 <style scoped>
-.hero-small {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 4rem 1rem 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.hero-small h1 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin: 0;
-}
-
 .content-section {
+  padding-top: 120px;
   padding-bottom: 4rem;
 }
 
-.litter-section {
-  margin-bottom: 4rem;
-}
-
-.section-header {
+.announcement-section {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
-.tag {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
+.announcement-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-primary-dark);
   margin-bottom: 0.5rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.tag.secondary {
-  background-color: #6c757d;
+.announcement-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text-light);
+  margin-bottom: 4rem;
+  font-weight: 300;
 }
 
-.section-header h2 {
+.parents-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .parents-container {
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+  }
+}
+
+.parent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parent-image {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+  border: 4px solid white;
+}
+
+.parent-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.parent-card:hover .parent-image img {
+  transform: scale(1.05);
+}
+
+.parent-info h3 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.dog-name {
+  font-size: 2.5rem;
   font-family: var(--font-heading);
-  font-size: 2rem;
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.kennel-name {
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.achievements {
+  list-style: none;
+  padding: 0;
+  color: var(--color-secondary);
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.parents-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.x-mark {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  color: var(--color-primary-light);
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.litter-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.litter-info p {
+  font-size: 1.2rem;
   color: var(--color-text);
   margin: 0;
 }
 
-.litter-details {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 2rem;
+/* Integrated Contact Styles */
+.integrated-contact {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border: 1px solid var(--color-beige);
 }
 
-.parents-info {
-  margin-bottom: 2rem;
-}
-
-.parents-info h3, .puppy-list h3 {
-  font-family: var(--font-heading);
-  color: var(--color-primary);
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.puppy-grid {
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .puppy-grid {
+@media (min-width: 900px) {
+  .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.puppy-card {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
+.contact-details {
+  padding: 3rem;
+  background-color: var(--color-bg-warm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.puppy-card h4 {
-  margin-top: 0;
+.contact-details h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
   color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
-.puppy-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.contact-intro {
+  color: var(--color-text-light);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
-.puppy-card ul li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #e0e0e0;
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.puppy-card ul li:last-child {
-  border-bottom: none;
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.divider {
-  border: 0;
-  height: 1px;
-  background: #eee;
-  margin: 4rem 0;
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-soft);
 }
 
-.cta-box {
-  background-color: #effbf5;
-  border: 1px solid #c3e6cb;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 2rem;
+.method-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.cta-box h3 {
-  color: #155724;
-  margin-top: 0;
+.method-info .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  font-weight: 600;
 }
 
-.cta-box a {
-  color: #155724;
-  font-weight: bold;
-  text-decoration: underline;
+.method-info .value {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-form-wrapper {
+  padding: 3rem;
+  background-color: white;
 }
 </style>

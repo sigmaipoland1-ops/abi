@@ -31,14 +31,14 @@ onUnmounted(() => {
         
         <ul class="nav-menu" :class="{ open: isMenuOpen }">
           <li><RouterLink to="/" class="nav-link" active-class="active">Strona główna</RouterLink></li>
-          <li><RouterLink to="/about" class="nav-link" active-class="active">O nas</RouterLink></li>
-          <li><RouterLink to="/our-dogs" class="nav-link" active-class="active">Nasze Psy</RouterLink></li>
-          <li><RouterLink to="/puppies" class="nav-link" active-class="active">Szczenięta</RouterLink></li>
-          <li><RouterLink to="/knowledge" class="nav-link" active-class="active">Warto wiedzieć</RouterLink></li>
-          <li><RouterLink to="/contact" class="nav-link" active-class="active">Kontakt</RouterLink></li>
+          <li><RouterLink to="/o-nas" class="nav-link" active-class="active">O nas</RouterLink></li>
+          <li><RouterLink to="/nasze-psy" class="nav-link" active-class="active">Nasza Suczka</RouterLink></li>
+          <li><RouterLink to="/szczenieta" class="nav-link" active-class="active">Szczenięta</RouterLink></li>
+          <li><RouterLink to="/warto-wiedziec" class="nav-link" active-class="active">Warto wiedzieć</RouterLink></li>
+          <li><RouterLink to="/kontakt" class="nav-link" active-class="active">Kontakt</RouterLink></li>
         </ul>
         
-        <RouterLink to="/contact" class="btn btn-primary nav-cta">Skontaktuj się</RouterLink>
+        <RouterLink to="/kontakt" class="btn btn-primary nav-cta">Skontaktuj się</RouterLink>
         
         <button 
           class="nav-toggle" 

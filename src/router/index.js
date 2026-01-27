@@ -10,29 +10,29 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
+      path: '/o-nas',
       name: 'about',
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/our-dogs',
+      path: '/nasze-psy',
       name: 'dogs',
       component: () => import('../views/DogsView.vue')
     },
     {
-      path: '/puppies',
+      path: '/szczenieta',
       name: 'puppies',
       component: () => import('../views/PuppiesView.vue')
     },
     {
-      path: '/knowledge',
+      path: '/warto-wiedziec',
       name: 'knowledge',
       component: () => import('../views/KnowledgeView.vue')
     },
     {
-      path: '/contact',
+      path: '/kontakt',
       name: 'contact',
-      component: () => import('../components/Contact.vue') 
+      component: () => import('../components/Contact.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

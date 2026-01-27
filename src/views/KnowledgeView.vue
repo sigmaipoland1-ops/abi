@@ -1,10 +1,6 @@
 <template>
   <div class="knowledge-page">
-    <div class="hero-small">
-      <div class="container">
-        <h1>Warto Wiedzieć</h1>
-      </div>
-    </div>
+
 
     <div class="container content-section">
       
@@ -172,21 +168,10 @@ const activeTab = ref('breed')
 </script>
 
 <style scoped>
-.hero-small {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 4rem 1rem 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
-}
 
-.hero-small h1 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin: 0;
-}
 
 .content-section {
+  padding-top: 120px;
   padding-bottom: 4rem;
 }
 
